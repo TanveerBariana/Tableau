@@ -15,9 +15,8 @@ import pygeohash as pgh
 def Get_LatLon(df):
 	for i in range(0, len(df)):
 		latLon = pgh.decode(df.iloc[i]['geohash'])
-		df.set_value(i, 'Latitude', latLon[0])
-		df.set_value(i, 'Longitude', latLon[1])
-
+	df['Latitude'] =  latLon[0]
+	df['Longitude'] =  latLon[1]
 	return df
 
 
